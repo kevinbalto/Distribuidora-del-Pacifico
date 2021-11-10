@@ -1,0 +1,48 @@
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\DAL.dll.config
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\DAL.dll
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\DAL.pdb
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.dll
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.pdb
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\DAL.dll.config
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\DAL.dll
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\DAL.pdb
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.dll
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.xml
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.dll
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.pdb
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\DAL\bin\Debug\DAL.dll.config
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\DAL\bin\Debug\DAL.dll
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\DAL\bin\Debug\DAL.pdb
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.dll
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.xml
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.dll
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.pdb
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\bin\Debug\DAL.dll.config
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\bin\Debug\DAL.dll
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\bin\Debug\DAL.pdb
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.dll
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\bin\Debug\itextsharp.dll
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.xml
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\bin\Debug\itextsharp.xml
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.dll
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\DAL\obj\Debug\DAL.pdb

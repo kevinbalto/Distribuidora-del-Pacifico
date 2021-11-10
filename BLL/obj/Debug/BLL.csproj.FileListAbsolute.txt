@@ -1,0 +1,52 @@
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 29-04-20\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.dll
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 29-04-20\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.pdb
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 29-04-20\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 29-04-20\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.dll
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 29-04-20\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.pdb
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 30-04-20\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.dll
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 30-04-20\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.pdb
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 30-04-20\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 30-04-20\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.dll
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 30-04-20\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.pdb
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 06-05-20\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.dll
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 06-05-20\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.pdb
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 06-05-20\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.dll
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 06-05-20\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.pdb
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\Version 06-05-20\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\keily\OneDrive\Escritorio\Proyecto Lenguajes\Proyecto Web Lenguajes\Version 06-05-20\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.dll
+C:\Users\keily\OneDrive\Escritorio\Proyecto Lenguajes\Proyecto Web Lenguajes\Version 06-05-20\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.pdb
+C:\Users\keily\OneDrive\Escritorio\Proyecto Lenguajes\Proyecto Web Lenguajes\Version 06-05-20\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\keily\OneDrive\Escritorio\Proyecto Lenguajes\Proyecto Web Lenguajes\Version 06-05-20\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.dll
+C:\Users\keily\OneDrive\Escritorio\Proyecto Lenguajes\Proyecto Web Lenguajes\Version 06-05-20\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.pdb
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.dll
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.pdb
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.dll
+C:\Users\Kevin\Desktop\Proyecto Web Lenguajes\20-05-2020\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.pdb
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.dll
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.pdb
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.dll
+C:\Actualizado\20-05-2020\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.pdb
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.dll
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.pdb
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.dll
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.pdb
+C:\Users\keily\OneDrive\Escritorio\21-05-2020-Actualizado\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.dll
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.pdb
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\BLL\bin\Debug\itextsharp.dll
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\BLL\bin\Debug\itextsharp.xml
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.dll
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.pdb
+C:\Users\keily\OneDrive\Escritorio\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Kevin\Desktop\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.dll
+C:\Users\Kevin\Desktop\AppDistribuidoraPacifico\BLL\bin\Debug\BLL.pdb
+C:\Users\Kevin\Desktop\AppDistribuidoraPacifico\BLL\bin\Debug\itextsharp.dll
+C:\Users\Kevin\Desktop\AppDistribuidoraPacifico\BLL\bin\Debug\itextsharp.xml
+C:\Users\Kevin\Desktop\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Kevin\Desktop\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Kevin\Desktop\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.dll
+C:\Users\Kevin\Desktop\AppDistribuidoraPacifico\BLL\obj\Debug\BLL.pdb

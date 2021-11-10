@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3821bc8623ee4c79a993aee80d36874d" Name="Diagram1">
+        <EntityTypeShape EntityType="DistribuidoraPacificoModel.TblContactos" Width="1.5" PointX="2.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistribuidoraPacificoModel.TblDetalleFactura" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistribuidoraPacificoModel.TblFactura" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistribuidoraPacificoModel.TblProducto" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistribuidoraPacificoModel.TblProductosProveedor" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistribuidoraPacificoModel.TblProveedores" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistribuidoraPacificoModel.TblRoles" Width="1.5" PointX="1.5" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistribuidoraPacificoModel.TblUsuarios" Width="1.5" PointX="1.5" PointY="14.5" IsExpanded="true" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblDetall__codig__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblDetall__codig__1AD3FDA4" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblDetall__codig__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblDetall__codig__208CD6FA" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblFactur__cedul__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblFactur__cedul__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblFactur__cedul__1F98B2C1" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblProduc__codBa__00200768" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblProduc__codBa__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblProduc__codBa__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblProduc__codBa__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblProduc__cedLe__01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblProduc__cedLe__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblProduc__cedLe__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblProduc__cedLe__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="DistribuidoraPacificoModel.FK__TblUsuari__idRol__36B12243" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

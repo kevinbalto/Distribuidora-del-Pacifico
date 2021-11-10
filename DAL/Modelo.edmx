@@ -1,0 +1,874 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DistribuidoraPacificoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblContactos">
+          <Key>
+            <PropertyRef Name="cedula" />
+          </Key>
+          <Property Name="cedula" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombreCompleto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Asunto" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblDetalleFactura">
+          <Key>
+            <PropertyRef Name="codigoDetalle" />
+          </Key>
+          <Property Name="codigoDetalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigoFactura" Type="int" Nullable="false" />
+          <Property Name="codigoProducto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="precio" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="subTotal" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblFactura">
+          <Key>
+            <PropertyRef Name="codigoFactura" />
+          </Key>
+          <Property Name="codigoFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cedulaCliente" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TotalPagar" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="formaPago" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="informacionPago" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="descuento" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblProducto">
+          <Key>
+            <PropertyRef Name="codBarras" />
+          </Key>
+          <Property Name="codBarras" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="clasificacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="precioCompra" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="porcentajeIV" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="porcentajeIVA" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="exento" Type="bit" Nullable="false" />
+          <Property Name="unidadMedida" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="foto" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="precioImpuestoIncluido" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblProductosProveedor">
+          <Key>
+            <PropertyRef Name="codBarras" />
+            <PropertyRef Name="cedLegal" />
+          </Key>
+          <Property Name="codBarras" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cedLegal" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblProveedores">
+          <Key>
+            <PropertyRef Name="cedLegal" />
+          </Key>
+          <Property Name="cedLegal" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombreComercial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="direccionExacta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contacto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblRoles">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombreRol" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblUsuarios">
+          <Key>
+            <PropertyRef Name="cedula" />
+          </Key>
+          <Property Name="cedula" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tipoIdentificacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombreCompleto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contrasenna" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idRol" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__TblDetall__codig__160F4887">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblDetalleFactura" Type="Self.TblDetalleFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblDetalleFactura">
+              <PropertyRef Name="codigoProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblDetall__codig__1AD3FDA4">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblDetalleFactura" Type="Self.TblDetalleFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblDetalleFactura">
+              <PropertyRef Name="codigoProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblDetall__codig__1EA48E88">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblDetalleFactura" Type="Self.TblDetalleFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblDetalleFactura">
+              <PropertyRef Name="codigoProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblDetall__codig__208CD6FA">
+          <End Role="TblFactura" Type="Self.TblFactura" Multiplicity="1" />
+          <End Role="TblDetalleFactura" Type="Self.TblDetalleFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblFactura">
+              <PropertyRef Name="codigoFactura" />
+            </Principal>
+            <Dependent Role="TblDetalleFactura">
+              <PropertyRef Name="codigoFactura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblFactur__cedul__17036CC0">
+          <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="1" />
+          <End Role="TblFactura" Type="Self.TblFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblUsuarios">
+              <PropertyRef Name="cedula" />
+            </Principal>
+            <Dependent Role="TblFactura">
+              <PropertyRef Name="cedulaCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblFactur__cedul__18EBB532">
+          <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="1" />
+          <End Role="TblFactura" Type="Self.TblFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblUsuarios">
+              <PropertyRef Name="cedula" />
+            </Principal>
+            <Dependent Role="TblFactura">
+              <PropertyRef Name="cedulaCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblFactur__cedul__1F98B2C1">
+          <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="1" />
+          <End Role="TblFactura" Type="Self.TblFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblUsuarios">
+              <PropertyRef Name="cedula" />
+            </Principal>
+            <Dependent Role="TblFactura">
+              <PropertyRef Name="cedulaCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__cedLe__01142BA1">
+          <End Role="TblProveedores" Type="Self.TblProveedores" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProveedores">
+              <PropertyRef Name="cedLegal" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="cedLegal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__cedLe__02FC7413">
+          <End Role="TblProveedores" Type="Self.TblProveedores" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProveedores">
+              <PropertyRef Name="cedLegal" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="cedLegal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__cedLe__04E4BC85">
+          <End Role="TblProveedores" Type="Self.TblProveedores" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProveedores">
+              <PropertyRef Name="cedLegal" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="cedLegal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__cedLe__7F2BE32F">
+          <End Role="TblProveedores" Type="Self.TblProveedores" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProveedores">
+              <PropertyRef Name="cedLegal" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="cedLegal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__codBa__00200768">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="codBarras" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__codBa__02084FDA">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="codBarras" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__codBa__03F0984C">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="codBarras" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__codBa__7E37BEF6">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="codBarras" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblUsuari__idRol__36B12243">
+          <End Role="TblRoles" Type="Self.TblRoles" Multiplicity="1" />
+          <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblRoles">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="TblUsuarios">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DistribuidoraPacificoModelStoreContainer">
+          <EntitySet Name="TblContactos" EntityType="Self.TblContactos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblDetalleFactura" EntityType="Self.TblDetalleFactura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblFactura" EntityType="Self.TblFactura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblProducto" EntityType="Self.TblProducto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblProductosProveedor" EntityType="Self.TblProductosProveedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblProveedores" EntityType="Self.TblProveedores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblRoles" EntityType="Self.TblRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblUsuarios" EntityType="Self.TblUsuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__TblDetall__codig__160F4887" Association="Self.FK__TblDetall__codig__160F4887">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblDetalleFactura" EntitySet="TblDetalleFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblDetall__codig__1AD3FDA4" Association="Self.FK__TblDetall__codig__1AD3FDA4">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblDetalleFactura" EntitySet="TblDetalleFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblDetall__codig__1EA48E88" Association="Self.FK__TblDetall__codig__1EA48E88">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblDetalleFactura" EntitySet="TblDetalleFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblDetall__codig__208CD6FA" Association="Self.FK__TblDetall__codig__208CD6FA">
+            <End Role="TblFactura" EntitySet="TblFactura" />
+            <End Role="TblDetalleFactura" EntitySet="TblDetalleFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblFactur__cedul__17036CC0" Association="Self.FK__TblFactur__cedul__17036CC0">
+            <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+            <End Role="TblFactura" EntitySet="TblFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblFactur__cedul__18EBB532" Association="Self.FK__TblFactur__cedul__18EBB532">
+            <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+            <End Role="TblFactura" EntitySet="TblFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblFactur__cedul__1F98B2C1" Association="Self.FK__TblFactur__cedul__1F98B2C1">
+            <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+            <End Role="TblFactura" EntitySet="TblFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__cedLe__01142BA1" Association="Self.FK__TblProduc__cedLe__01142BA1">
+            <End Role="TblProveedores" EntitySet="TblProveedores" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__cedLe__02FC7413" Association="Self.FK__TblProduc__cedLe__02FC7413">
+            <End Role="TblProveedores" EntitySet="TblProveedores" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__cedLe__04E4BC85" Association="Self.FK__TblProduc__cedLe__04E4BC85">
+            <End Role="TblProveedores" EntitySet="TblProveedores" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__cedLe__7F2BE32F" Association="Self.FK__TblProduc__cedLe__7F2BE32F">
+            <End Role="TblProveedores" EntitySet="TblProveedores" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__codBa__00200768" Association="Self.FK__TblProduc__codBa__00200768">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__codBa__02084FDA" Association="Self.FK__TblProduc__codBa__02084FDA">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__codBa__03F0984C" Association="Self.FK__TblProduc__codBa__03F0984C">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__codBa__7E37BEF6" Association="Self.FK__TblProduc__codBa__7E37BEF6">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblUsuari__idRol__36B12243" Association="Self.FK__TblUsuari__idRol__36B12243">
+            <End Role="TblRoles" EntitySet="TblRoles" />
+            <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DistribuidoraPacificoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblContactos">
+          <Key>
+            <PropertyRef Name="cedula" />
+          </Key>
+          <Property Name="cedula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Asunto" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblDetalleFactura">
+          <Key>
+            <PropertyRef Name="codigoDetalle" />
+          </Key>
+          <Property Name="codigoDetalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigoFactura" Type="Int32" Nullable="false" />
+          <Property Name="codigoProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="subTotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="TblProducto" Relationship="Self.FK__TblDetall__codig__160F4887" FromRole="TblDetalleFactura" ToRole="TblProducto" />
+          <NavigationProperty Name="TblProducto1" Relationship="Self.FK__TblDetall__codig__1AD3FDA4" FromRole="TblDetalleFactura" ToRole="TblProducto" />
+          <NavigationProperty Name="TblProducto2" Relationship="Self.FK__TblDetall__codig__1EA48E88" FromRole="TblDetalleFactura" ToRole="TblProducto" />
+          <NavigationProperty Name="TblFactura" Relationship="Self.FK__TblDetall__codig__208CD6FA" FromRole="TblDetalleFactura" ToRole="TblFactura" />
+        </EntityType>
+        <EntityType Name="TblFactura">
+          <Key>
+            <PropertyRef Name="codigoFactura" />
+          </Key>
+          <Property Name="codigoFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cedulaCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TotalPagar" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="formaPago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="informacionPago" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="descuento" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="TblDetalleFactura" Relationship="Self.FK__TblDetall__codig__208CD6FA" FromRole="TblFactura" ToRole="TblDetalleFactura" />
+          <NavigationProperty Name="TblUsuarios" Relationship="Self.FK__TblFactur__cedul__17036CC0" FromRole="TblFactura" ToRole="TblUsuarios" />
+          <NavigationProperty Name="TblUsuarios1" Relationship="Self.FK__TblFactur__cedul__18EBB532" FromRole="TblFactura" ToRole="TblUsuarios" />
+          <NavigationProperty Name="TblUsuarios2" Relationship="Self.FK__TblFactur__cedul__1F98B2C1" FromRole="TblFactura" ToRole="TblUsuarios" />
+        </EntityType>
+        <EntityType Name="TblProducto">
+          <Key>
+            <PropertyRef Name="codBarras" />
+          </Key>
+          <Property Name="codBarras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="clasificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="precioCompra" Type="Decimal" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="porcentajeIV" Type="Decimal" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="porcentajeIVA" Type="Decimal" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="exento" Type="Boolean" Nullable="false" />
+          <Property Name="unidadMedida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <Property Name="foto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="precioImpuestoIncluido" Type="Decimal" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TblDetalleFactura" Relationship="Self.FK__TblDetall__codig__160F4887" FromRole="TblProducto" ToRole="TblDetalleFactura" />
+          <NavigationProperty Name="TblDetalleFactura1" Relationship="Self.FK__TblDetall__codig__1AD3FDA4" FromRole="TblProducto" ToRole="TblDetalleFactura" />
+          <NavigationProperty Name="TblDetalleFactura2" Relationship="Self.FK__TblDetall__codig__1EA48E88" FromRole="TblProducto" ToRole="TblDetalleFactura" />
+          <NavigationProperty Name="TblProductosProveedor" Relationship="Self.FK__TblProduc__codBa__00200768" FromRole="TblProducto" ToRole="TblProductosProveedor" />
+          <NavigationProperty Name="TblProductosProveedor1" Relationship="Self.FK__TblProduc__codBa__02084FDA" FromRole="TblProducto" ToRole="TblProductosProveedor" />
+          <NavigationProperty Name="TblProductosProveedor2" Relationship="Self.FK__TblProduc__codBa__03F0984C" FromRole="TblProducto" ToRole="TblProductosProveedor" />
+          <NavigationProperty Name="TblProductosProveedor3" Relationship="Self.FK__TblProduc__codBa__7E37BEF6" FromRole="TblProducto" ToRole="TblProductosProveedor" />
+        </EntityType>
+        <EntityType Name="TblProductosProveedor">
+          <Key>
+            <PropertyRef Name="codBarras" />
+            <PropertyRef Name="cedLegal" />
+          </Key>
+          <Property Name="codBarras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cedLegal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TblProducto" Relationship="Self.FK__TblProduc__codBa__00200768" FromRole="TblProductosProveedor" ToRole="TblProducto" />
+          <NavigationProperty Name="TblProducto1" Relationship="Self.FK__TblProduc__codBa__02084FDA" FromRole="TblProductosProveedor" ToRole="TblProducto" />
+          <NavigationProperty Name="TblProducto2" Relationship="Self.FK__TblProduc__codBa__03F0984C" FromRole="TblProductosProveedor" ToRole="TblProducto" />
+          <NavigationProperty Name="TblProducto3" Relationship="Self.FK__TblProduc__codBa__7E37BEF6" FromRole="TblProductosProveedor" ToRole="TblProducto" />
+          <NavigationProperty Name="TblProveedores" Relationship="Self.FK__TblProduc__cedLe__01142BA1" FromRole="TblProductosProveedor" ToRole="TblProveedores" />
+          <NavigationProperty Name="TblProveedores1" Relationship="Self.FK__TblProduc__cedLe__02FC7413" FromRole="TblProductosProveedor" ToRole="TblProveedores" />
+          <NavigationProperty Name="TblProveedores2" Relationship="Self.FK__TblProduc__cedLe__04E4BC85" FromRole="TblProductosProveedor" ToRole="TblProveedores" />
+          <NavigationProperty Name="TblProveedores3" Relationship="Self.FK__TblProduc__cedLe__7F2BE32F" FromRole="TblProductosProveedor" ToRole="TblProveedores" />
+        </EntityType>
+        <EntityType Name="TblProveedores">
+          <Key>
+            <PropertyRef Name="cedLegal" />
+          </Key>
+          <Property Name="cedLegal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreComercial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccionExacta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TblProductosProveedor" Relationship="Self.FK__TblProduc__cedLe__01142BA1" FromRole="TblProveedores" ToRole="TblProductosProveedor" />
+          <NavigationProperty Name="TblProductosProveedor1" Relationship="Self.FK__TblProduc__cedLe__02FC7413" FromRole="TblProveedores" ToRole="TblProductosProveedor" />
+          <NavigationProperty Name="TblProductosProveedor2" Relationship="Self.FK__TblProduc__cedLe__04E4BC85" FromRole="TblProveedores" ToRole="TblProductosProveedor" />
+          <NavigationProperty Name="TblProductosProveedor3" Relationship="Self.FK__TblProduc__cedLe__7F2BE32F" FromRole="TblProveedores" ToRole="TblProductosProveedor" />
+        </EntityType>
+        <EntityType Name="TblRoles">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreRol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TblUsuarios" Relationship="Self.FK__TblUsuari__idRol__36B12243" FromRole="TblRoles" ToRole="TblUsuarios" />
+        </EntityType>
+        <EntityType Name="TblUsuarios">
+          <Key>
+            <PropertyRef Name="cedula" />
+          </Key>
+          <Property Name="cedula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipoIdentificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contrasenna" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idRol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TblFactura" Relationship="Self.FK__TblFactur__cedul__17036CC0" FromRole="TblUsuarios" ToRole="TblFactura" />
+          <NavigationProperty Name="TblFactura1" Relationship="Self.FK__TblFactur__cedul__18EBB532" FromRole="TblUsuarios" ToRole="TblFactura" />
+          <NavigationProperty Name="TblFactura2" Relationship="Self.FK__TblFactur__cedul__1F98B2C1" FromRole="TblUsuarios" ToRole="TblFactura" />
+          <NavigationProperty Name="TblRoles" Relationship="Self.FK__TblUsuari__idRol__36B12243" FromRole="TblUsuarios" ToRole="TblRoles" />
+        </EntityType>
+        <Association Name="FK__TblDetall__codig__160F4887">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblDetalleFactura" Type="Self.TblDetalleFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblDetalleFactura">
+              <PropertyRef Name="codigoProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblDetall__codig__1AD3FDA4">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblDetalleFactura" Type="Self.TblDetalleFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblDetalleFactura">
+              <PropertyRef Name="codigoProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblDetall__codig__1EA48E88">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblDetalleFactura" Type="Self.TblDetalleFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblDetalleFactura">
+              <PropertyRef Name="codigoProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblDetall__codig__208CD6FA">
+          <End Role="TblFactura" Type="Self.TblFactura" Multiplicity="1" />
+          <End Role="TblDetalleFactura" Type="Self.TblDetalleFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblFactura">
+              <PropertyRef Name="codigoFactura" />
+            </Principal>
+            <Dependent Role="TblDetalleFactura">
+              <PropertyRef Name="codigoFactura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblFactur__cedul__17036CC0">
+          <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="1" />
+          <End Role="TblFactura" Type="Self.TblFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblUsuarios">
+              <PropertyRef Name="cedula" />
+            </Principal>
+            <Dependent Role="TblFactura">
+              <PropertyRef Name="cedulaCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblFactur__cedul__18EBB532">
+          <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="1" />
+          <End Role="TblFactura" Type="Self.TblFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblUsuarios">
+              <PropertyRef Name="cedula" />
+            </Principal>
+            <Dependent Role="TblFactura">
+              <PropertyRef Name="cedulaCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblFactur__cedul__1F98B2C1">
+          <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="1" />
+          <End Role="TblFactura" Type="Self.TblFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblUsuarios">
+              <PropertyRef Name="cedula" />
+            </Principal>
+            <Dependent Role="TblFactura">
+              <PropertyRef Name="cedulaCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__codBa__00200768">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="codBarras" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__codBa__02084FDA">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="codBarras" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__codBa__03F0984C">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="codBarras" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__codBa__7E37BEF6">
+          <End Role="TblProducto" Type="Self.TblProducto" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProducto">
+              <PropertyRef Name="codBarras" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="codBarras" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__cedLe__01142BA1">
+          <End Role="TblProveedores" Type="Self.TblProveedores" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProveedores">
+              <PropertyRef Name="cedLegal" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="cedLegal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__cedLe__02FC7413">
+          <End Role="TblProveedores" Type="Self.TblProveedores" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProveedores">
+              <PropertyRef Name="cedLegal" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="cedLegal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__cedLe__04E4BC85">
+          <End Role="TblProveedores" Type="Self.TblProveedores" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProveedores">
+              <PropertyRef Name="cedLegal" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="cedLegal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblProduc__cedLe__7F2BE32F">
+          <End Role="TblProveedores" Type="Self.TblProveedores" Multiplicity="1" />
+          <End Role="TblProductosProveedor" Type="Self.TblProductosProveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProveedores">
+              <PropertyRef Name="cedLegal" />
+            </Principal>
+            <Dependent Role="TblProductosProveedor">
+              <PropertyRef Name="cedLegal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblUsuari__idRol__36B12243">
+          <End Role="TblRoles" Type="Self.TblRoles" Multiplicity="1" />
+          <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblRoles">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="TblUsuarios">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DistribuidoraPacificoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblContactos" EntityType="Self.TblContactos" />
+          <EntitySet Name="TblDetalleFactura" EntityType="Self.TblDetalleFactura" />
+          <EntitySet Name="TblFactura" EntityType="Self.TblFactura" />
+          <EntitySet Name="TblProducto" EntityType="Self.TblProducto" />
+          <EntitySet Name="TblProductosProveedor" EntityType="Self.TblProductosProveedor" />
+          <EntitySet Name="TblProveedores" EntityType="Self.TblProveedores" />
+          <EntitySet Name="TblRoles" EntityType="Self.TblRoles" />
+          <EntitySet Name="TblUsuarios" EntityType="Self.TblUsuarios" />
+          <AssociationSet Name="FK__TblDetall__codig__160F4887" Association="Self.FK__TblDetall__codig__160F4887">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblDetalleFactura" EntitySet="TblDetalleFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblDetall__codig__1AD3FDA4" Association="Self.FK__TblDetall__codig__1AD3FDA4">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblDetalleFactura" EntitySet="TblDetalleFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblDetall__codig__1EA48E88" Association="Self.FK__TblDetall__codig__1EA48E88">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblDetalleFactura" EntitySet="TblDetalleFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblDetall__codig__208CD6FA" Association="Self.FK__TblDetall__codig__208CD6FA">
+            <End Role="TblFactura" EntitySet="TblFactura" />
+            <End Role="TblDetalleFactura" EntitySet="TblDetalleFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblFactur__cedul__17036CC0" Association="Self.FK__TblFactur__cedul__17036CC0">
+            <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+            <End Role="TblFactura" EntitySet="TblFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblFactur__cedul__18EBB532" Association="Self.FK__TblFactur__cedul__18EBB532">
+            <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+            <End Role="TblFactura" EntitySet="TblFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblFactur__cedul__1F98B2C1" Association="Self.FK__TblFactur__cedul__1F98B2C1">
+            <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+            <End Role="TblFactura" EntitySet="TblFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__codBa__00200768" Association="Self.FK__TblProduc__codBa__00200768">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__codBa__02084FDA" Association="Self.FK__TblProduc__codBa__02084FDA">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__codBa__03F0984C" Association="Self.FK__TblProduc__codBa__03F0984C">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__codBa__7E37BEF6" Association="Self.FK__TblProduc__codBa__7E37BEF6">
+            <End Role="TblProducto" EntitySet="TblProducto" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__cedLe__01142BA1" Association="Self.FK__TblProduc__cedLe__01142BA1">
+            <End Role="TblProveedores" EntitySet="TblProveedores" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__cedLe__02FC7413" Association="Self.FK__TblProduc__cedLe__02FC7413">
+            <End Role="TblProveedores" EntitySet="TblProveedores" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__cedLe__04E4BC85" Association="Self.FK__TblProduc__cedLe__04E4BC85">
+            <End Role="TblProveedores" EntitySet="TblProveedores" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblProduc__cedLe__7F2BE32F" Association="Self.FK__TblProduc__cedLe__7F2BE32F">
+            <End Role="TblProveedores" EntitySet="TblProveedores" />
+            <End Role="TblProductosProveedor" EntitySet="TblProductosProveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblUsuari__idRol__36B12243" Association="Self.FK__TblUsuari__idRol__36B12243">
+            <End Role="TblRoles" EntitySet="TblRoles" />
+            <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DistribuidoraPacificoModelStoreContainer" CdmEntityContainer="DistribuidoraPacificoEntities">
+          <EntitySetMapping Name="TblContactos">
+            <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblContactos">
+              <MappingFragment StoreEntitySet="TblContactos">
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Asunto" ColumnName="Asunto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDetalleFactura">
+            <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblDetalleFactura">
+              <MappingFragment StoreEntitySet="TblDetalleFactura">
+                <ScalarProperty Name="codigoDetalle" ColumnName="codigoDetalle" />
+                <ScalarProperty Name="codigoFactura" ColumnName="codigoFactura" />
+                <ScalarProperty Name="codigoProducto" ColumnName="codigoProducto" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="subTotal" ColumnName="subTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblFactura">
+            <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblFactura">
+              <MappingFragment StoreEntitySet="TblFactura">
+                <ScalarProperty Name="codigoFactura" ColumnName="codigoFactura" />
+                <ScalarProperty Name="cedulaCliente" ColumnName="cedulaCliente" />
+                <ScalarProperty Name="TotalPagar" ColumnName="TotalPagar" />
+                <ScalarProperty Name="formaPago" ColumnName="formaPago" />
+                <ScalarProperty Name="informacionPago" ColumnName="informacionPago" />
+                <ScalarProperty Name="descuento" ColumnName="descuento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProducto">
+            <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblProducto">
+              <MappingFragment StoreEntitySet="TblProducto">
+                <ScalarProperty Name="codBarras" ColumnName="codBarras" />
+                <ScalarProperty Name="clasificacion" ColumnName="clasificacion" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="precioCompra" ColumnName="precioCompra" />
+                <ScalarProperty Name="porcentajeIV" ColumnName="porcentajeIV" />
+                <ScalarProperty Name="porcentajeIVA" ColumnName="porcentajeIVA" />
+                <ScalarProperty Name="exento" ColumnName="exento" />
+                <ScalarProperty Name="unidadMedida" ColumnName="unidadMedida" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="precioImpuestoIncluido" ColumnName="precioImpuestoIncluido" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProductosProveedor">
+            <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblProductosProveedor">
+              <MappingFragment StoreEntitySet="TblProductosProveedor">
+                <ScalarProperty Name="codBarras" ColumnName="codBarras" />
+                <ScalarProperty Name="cedLegal" ColumnName="cedLegal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProveedores">
+            <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblProveedores">
+              <MappingFragment StoreEntitySet="TblProveedores">
+                <ScalarProperty Name="cedLegal" ColumnName="cedLegal" />
+                <ScalarProperty Name="nombreComercial" ColumnName="nombreComercial" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccionExacta" ColumnName="direccionExacta" />
+                <ScalarProperty Name="contacto" ColumnName="contacto" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblRoles">
+            <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblRoles">
+              <MappingFragment StoreEntitySet="TblRoles">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="nombreRol" ColumnName="nombreRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblUsuarios">
+            <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblUsuarios">
+              <MappingFragment StoreEntitySet="TblUsuarios">
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="tipoIdentificacion" ColumnName="tipoIdentificacion" />
+                <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="contrasenna" ColumnName="contrasenna" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

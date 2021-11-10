@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DistribuidoraPacificoModelStoreContainer" CdmEntityContainer="DistribuidoraPacificoEntities">
+    <EntitySetMapping Name="TblContactos">
+      <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblContactos">
+        <MappingFragment StoreEntitySet="TblContactos">
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Asunto" ColumnName="Asunto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblDetalleFactura">
+      <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblDetalleFactura">
+        <MappingFragment StoreEntitySet="TblDetalleFactura">
+          <ScalarProperty Name="codigoDetalle" ColumnName="codigoDetalle" />
+          <ScalarProperty Name="codigoFactura" ColumnName="codigoFactura" />
+          <ScalarProperty Name="codigoProducto" ColumnName="codigoProducto" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="subTotal" ColumnName="subTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblFactura">
+      <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblFactura">
+        <MappingFragment StoreEntitySet="TblFactura">
+          <ScalarProperty Name="codigoFactura" ColumnName="codigoFactura" />
+          <ScalarProperty Name="cedulaCliente" ColumnName="cedulaCliente" />
+          <ScalarProperty Name="TotalPagar" ColumnName="TotalPagar" />
+          <ScalarProperty Name="formaPago" ColumnName="formaPago" />
+          <ScalarProperty Name="informacionPago" ColumnName="informacionPago" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblProducto">
+      <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblProducto">
+        <MappingFragment StoreEntitySet="TblProducto">
+          <ScalarProperty Name="codBarras" ColumnName="codBarras" />
+          <ScalarProperty Name="clasificacion" ColumnName="clasificacion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="precioCompra" ColumnName="precioCompra" />
+          <ScalarProperty Name="porcentajeIV" ColumnName="porcentajeIV" />
+          <ScalarProperty Name="porcentajeIVA" ColumnName="porcentajeIVA" />
+          <ScalarProperty Name="exento" ColumnName="exento" />
+          <ScalarProperty Name="unidadMedida" ColumnName="unidadMedida" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="precioImpuestoIncluido" ColumnName="precioImpuestoIncluido" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblProductosProveedor">
+      <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblProductosProveedor">
+        <MappingFragment StoreEntitySet="TblProductosProveedor">
+          <ScalarProperty Name="codBarras" ColumnName="codBarras" />
+          <ScalarProperty Name="cedLegal" ColumnName="cedLegal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblProveedores">
+      <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblProveedores">
+        <MappingFragment StoreEntitySet="TblProveedores">
+          <ScalarProperty Name="cedLegal" ColumnName="cedLegal" />
+          <ScalarProperty Name="nombreComercial" ColumnName="nombreComercial" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="direccionExacta" ColumnName="direccionExacta" />
+          <ScalarProperty Name="contacto" ColumnName="contacto" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblRoles">
+      <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblRoles">
+        <MappingFragment StoreEntitySet="TblRoles">
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="nombreRol" ColumnName="nombreRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUsuarios">
+      <EntityTypeMapping TypeName="DistribuidoraPacificoModel.TblUsuarios">
+        <MappingFragment StoreEntitySet="TblUsuarios">
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="tipoIdentificacion" ColumnName="tipoIdentificacion" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="contrasenna" ColumnName="contrasenna" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

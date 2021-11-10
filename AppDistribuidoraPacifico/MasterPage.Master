@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="AppDistribuidoraPacifico.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Distribuidora del Pacífico</title>
+    <link href="www/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="www/css/Styles.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="menu">
+            <nav class="navbar navbar-expand-md navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#Opciones">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand ubicacionLogo" href="Default.aspx">
+                    <img src="www/css/img/LogoDistribuciones.png" width="190" height="130" class="d-inline-block align-top" alt="">
+                </a>
+                <div id="Opciones" class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav tamannoLetraNav align-items-center ">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="RegistroProductos.aspx">Registrar Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="RegistroProvedores.aspx">Registrar Provedor</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Líneas</a>
+                            <div class="dropdown-menu btn-dis">
+                                <a class="dropdown-item seleccion nav-link" href="LineaBlanca.aspx">Línea Blanca</a>
+                                <a class="dropdown-item seleccion nav-link" href="LineaTecnologica.aspx">Línea Tecnológica</a>
+                                <a class="dropdown-item seleccion nav-link" href="LineaHogar.aspx">Línea Hogar</a>
+                                <a class="dropdown-item seleccion nav-link" href="LineaAbarrotes.aspx">Abarrotes</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown login">
+                            <a class="nav-link dropdown-toggle active pl-4 pr-4" style="padding: 5px" href="Login.aspx"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login
+                            </a>
+                            <div class="dropdown-menu btn-dis ">
+                                <asp:LoginName CssClass="dropdown-item nav-link seleccion" FormatString="Sesión {0}" runat="server" />
+                                <asp:LoginStatus CssClass="dropdown-item nav-link seleccion" runat="server" />
+                                <a class="dropdown-item nav-link seleccion" href="RegistroUsuarios.aspx">Registrarse</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Carrito.aspx">
+                                <img src="www/css/img/shopping-cart.png" width="34" height="34" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer class="page-footer font-small blue pt-4">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row align-items-center">
+                <div class="col-md-4 mt-md-0 mt-3">
+                    <div class="footer-copyright text-center py-3" style="margin-top: 10px">
+                        <ul class="navbar-nav tamannoLetraNav align-items-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" style="color: white;" href="FormularioContacto.aspx">Contactenos</a>
+                            </li>
+                        </ul>
+                        <h6 class="ItemCarousel ml-2">Tipo Cambio Dolar: ₡
+                                 <% Response.Write(((Decimal)Session["tipoCambio"]).ToString("0.00")); %></h6>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-md-0 mb-3">
+                    <div class="footer-copyright text-center py-3" style="margin-top: 10px">
+                        <img src="www/css/img/LogoDistribuciones.png" width="190" height="130" />
+                    </div>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3" style="margin-top: 20px; margin-left: 60px">
+                    <ul class="nav justify-content-end list-unstyled">
+                        <a href="https://www.facebook.com/">
+                            <img src="www/css/img/facebook.png" style="margin-right: 25px" width="34" height="34" /></a>
+                        <a href="https://twitter.com/?lang=es">
+                            <img src="www/css/img/twitter.png" style="margin-right: 25px" width="34" height="34" /></a>
+                        <a href="https://www.instagram.com/?hl=es-la">
+                            <img src="www/css/img/instagram.png" style="margin-right: 25px" width="34" height="34" />
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="www/js/jquery-3.4.1.min.js"></script>
+<script src="www/js/bootstrap.min.js"></script>
+</html>
